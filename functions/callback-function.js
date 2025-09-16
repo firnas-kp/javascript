@@ -13,6 +13,5 @@ function greetUserInput(callback){
     const name = "Liyara";
     callback(name);
 }
-
 //getuserinput pass greetuser a callback
 greetUserInput(greetUser);
