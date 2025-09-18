@@ -1,0 +1,7 @@
+dom (document object model)
+. it's a programming iterface provided by the browser.
+. it allows java script interact with access and manipulate the structure and the content of webpage.
+. programming interface = set of tools methods and rules thta allow software to interact with system or document
+
+
+getElemntById:-// getElementById is a js method used to select an element by its ID attribute.

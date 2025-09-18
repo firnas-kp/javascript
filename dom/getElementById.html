@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="mainHeading">Melcowe!</h1>
+    <button onclick="changeHeading()">Change Heading</button>
+
+    <script>
+        function changeHeading() {
+            // use getelemntbyid to accesss the heading
+            const Heading = document.getElementById("mainHeading");
+            //change the text-context of the heading
+            Heading.textContent = "Hello, you Clicked the button!"
+        }
+    </script>
+</body>
+</html>
