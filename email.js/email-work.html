@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Page</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-zlN3Vb1PbOB9YyWcJ63j2B3nL7PjJc3nJ6M7U6w6r1V2L7oO05puuMd9l4uZJ74O5dYc2ldo6rkC4Jf5Yk6+g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {  
+            font-family: system-ui, sans-serif;
+            background: #02fce7;
+            padding: 2rem;
+            background-color: rgb(24, 114, 99);
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            background: rgb(123, 150, 159);
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .map,
+        .form-container {
+            flex: 1 1 50%;
+            min-width: 300px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            min-height: 400px;
+        }
+
+        .form-container {
+            padding: 2rem;
+        }
+
+        h2 {
+            margin-bottom: 1.5rem;
+            color: #333;
+            text-align: center;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 1rem;
+            border: 2px solid #01110c;
+            border-radius: 4px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        input:focus,
+        textarea:focus {
+            
+            outline: none;
+            border-color: #4caf50;
+            
+        }
+
+        textarea {
+            resize: vertical;
+            height: 100%;
+
+        }
+
+        button {
+            width: 40%;
+            padding: 12px;
+            background: #06a197;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: rgb(0, 255, 72);
+        }
+
+        button:active {
+            transform: translateY(1px);
+        }
+
+        .phone {
+            margin-top: 1rem;
+            text-align: center;
+            font-size: 16px;
+        }
+
+        .phone a {
+            color: #011207;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .phone a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- <Google Map -->
+        <div class="map">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3913.0367377812945!2d75.77876647481231!3d11.258707788920917!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba65b2db706f6c3%3A0x88e33c099158e5f6!2sTECHOLAS%20TECHNOLOGIES%20PVT%20LTD!5e0!3m2!1sen!2sin!4v1759468833808!5m2!1sen!2sin"
+                allowfullscreen="" loading="lazy">
+            </iframe>
+        </div>
+
+        <!--  Contact Form -->
+        <div class="form-container">
+            <h2>Contact Us</h2>
+            <form id="contact-form">
+                <input type="text" name="name" placeholder=" name" required />
+                <input type="email" name="email" placeholder=" email" required />
+                <input type="text" name="title" placeholder="Subject" required />
+                <textarea name="message" placeholder="Your message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+
+            <div class="phone">
+                <a href="https://wa.me/+917907477969"><i class="fa-solid fa-phone">Whatsapp</i></a><br><br>
+                <a href="tel:+917907477969">Phone</a><br><br>
+                <a href="sreethupkrishnadasan@gmail.com">Email</a>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+        (function () {
+            emailjs.init("U0uKd89VwEgBX9JEh"); 
+        })();
+
+        document.getElementById("contact-form").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            emailjs.sendForm("service_za1kj38", "template_l6qm0s6", this).then(
+                function () {
+                    alert("Message sent successfully!");
+                },
+                function (error) {
+                    alert("Failed to send message: " + JSON.stringify(error));
+                }
+            );
+        });
+    </script>
+</body>
+
+</html>
